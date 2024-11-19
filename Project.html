@@ -5,52 +5,102 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Internet of Things Project</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
 </head>
 <body>
-  <div>
-    <h1>We are your Agriculture Partner</h1>
-
+  <div id="container">
+    <!-- Farm Details -->
+    <aside class="farm-details">
+      <h2>Farm Details</h2>
+      <p><strong>Farm Name:</strong> Rajputana's Farm</p>
+      <p><strong>Farm ID:</strong> FM1208OX</p>
+      <p><strong>Contact Number:</strong> +91 2345761289</p>
+      <p><strong>Location:</strong> Vijapur, Mehsana, Gujarat</p>
+      <p><strong>Land Area:</strong> 15 Acres</p>
+      <button id="btn-on">Pump ON OFF</button>
+    </aside>
+  
     <!-- Sensor Data Display -->
-    <div id="data-container" class="sensor-grid">
-      <div class="sensor-item">
-        <span class="sensor-name">Humidity Sensor</span>
-        <div id="humidity-data" class="sensor-box">30%</div>
-      </div>
-      <div class="sensor-item">
-        <span class="sensor-name">Temperature Sensor</span>
-        <div id="temperature-data" class="sensor-box">25</div>
-      </div>
-      <div class="sensor-item">
-        <span class="sensor-name">Soil Moisture Sensor</span>
-        <div id="soil-moisture-data" class="sensor-box">500</div>
-      </div>
-      <div class="sensor-item">
-        <span class="sensor-name">Turbudity Sensor</span>
-        <div id="light-data" class="sensor-box">797</div>
-      </div>
-      <div class="sensor-item">
-        <span class="sensor-name">Rain-Water Sensor</span>
-        <div id="pH-data" class="sensor-box">700</div>
-      </div>
+    <main class="sensor-container">
+      <h1>
+        <img class="img1" src="IOT.jpg" alt="IoT Logo">
+        We Are Your Agriculture Partner
+      </h1>
+      <div class="sensor-grid">
+        <div class="sensor-item" onmouseover="showGraph(1, 'Humidity')">
+          <i class="fas fa-water"></i>
+          <span class="sensor-name">Humidity </span>
+          <div id="humidity-data" class="sensor-box">50</div>
+        </div>
+        <div class="sensor-item" onmouseover="showGraph(2, 'Temperature')">
+          <i class="fas fa-thermometer-half"></i>
+          <span class="sensor-name">Temperature (Farm)</span>
+          <div id="temperature-data" class="sensor-box">25</div>
+        </div>
+        <div class="sensor-item" onmouseover="showGraph(3, 'Soil Moisture')">
+          <i class="fas fa-seedling"></i>
+          <span class="sensor-name">Soil Moisture </span>
+          <div id="soil-moisture-data" class="sensor-box">50</div>
+        </div>
+        <div class="sensor-item" onmouseover="showGraph(5, 'TDS')">
+          <i class="fas fa-lightbulb"></i>
+          <span class="sensor-name">TDS</span>
+          <div id="light-data" class="sensor-box">8</div>
+        </div>
+        <div class="sensor-item" onmouseover="showGraph(6, 'Water Level')">
+          <i class="fas fa-cloud-showers-heavy"></i>
+          <span class="sensor-name">Water Level</span>
+          <div id="pH-data" class="sensor-box">100</div>
+        </div>
+        <div class="sensor-item" onmouseover="showGraph(7, 'Temperature WaterTank')">
+          <i class="fas fa-thermometer-half"></i>
+          <span class="sensor-name">Temperature(WaterTank)</span>
+          <div id="temp-water" class="sensor-box">26.5</div>
+        </div>
+        
+      </main>
+    
+  
+    <!-- Graph Container -->
+    <div id="graph-container">
+      <div id="date"></div>
+      <canvas id="sensor-graph"></canvas>
     </div>
+  </div>
+  
 
-    <!-- About Us Section -->
-    <section id="about-us">
-      <h2>About Us</h2>
-      <p>
-        Welcome to our Internet of Things (IoT) project aimed at supporting modern agriculture. Our goal is to provide real-time data monitoring of essential environmental factors like humidity, temperature, and soil moisture to help farmers make informed decisions.
-      </p>
-      <p>
-        With our innovative sensor technology, we strive to enhance crop yield, optimize resource use, and promote sustainable farming practices.
-      </p>
-      <h2>Our Team</h2>
-      <p>
-        <span>Jay Thakkar</span>  <span>AU2140210</span>  <br>    <span>Dhruvesh Panchal</span>  <span>AU2140151</span><br>
-        <span>Dhruv Hingu</span>  <span>AU2140032</span>   <br>   <span>Dipesh Solanki</span>  <span>AU2140150</span>
-      </p>
-    </section>
   </div>
 
-  <script src="index.js"></script>
+  <!-- About Us Section -->
+  <section id="about-us">
+    <h2>About Us</h2>
+    <div class="info">
+      <p>
+        Welcome to our IoT project for modern agriculture. We provide real-time monitoring of humidity, temperature, and soil moisture to help farmers make better decisions.
+      </p>
+      <p>
+        Our sensors aim to enhance crop yield, optimize resources, and promote sustainable farming practices.
+      </p>
+      
+  </div>
+  <div class="info-group">
+    <h2 style="color: #1565c0;margin-bottom: 5px;">Our Team</h2>
+    
+      <span>Jay Thakkar</span> <span>AU2140210</span> <br>
+      <span>Dhruvesh Panchal</span> <span>AU2140151</span> <br>
+      <span>Dhruv Hingu</span> <span>AU2140032</span> <br>
+      <span>Dipesh Solanki</span> <span>AU2140150</span>
+    </div>
+    
+  </section>
 </body>
+
+
+  <script src="index.js">
+    // Add JavaScript to dynamically display graphs based on sensor hover
+    
+  </script>
+
 </html>
